@@ -2,6 +2,12 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 body {background-color: navajowhite;}
+
+form{
+    background-color: lightgray;
+    color: red;
+}
+h1{}
 a.navbar-brand {
   white-space: normal;
   text-align: center;

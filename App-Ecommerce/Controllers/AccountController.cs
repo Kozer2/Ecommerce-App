@@ -24,7 +24,14 @@ namespace App_Ecommerce.Controllers
         [HttpPost]
         public async Task<IActionResult> RegisterAsync(RegisterData data)
         {
-           await userService.Register(data, ModelState);
+            // checks for missing required tags
+            if (!ModelState.IsValid)
+                return View(data);
+
+            await userService.Register(data, ModelState);
+            // checks for errors on registration
+            if (!ModelState.IsValid)
+                return View(data);
             // this redirects the user to the welcome page once an account is made
             return RedirectToAction(nameof(Welcome));
         }

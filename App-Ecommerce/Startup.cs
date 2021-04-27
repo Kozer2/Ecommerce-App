@@ -1,7 +1,10 @@
 using App_Ecommerce.Data;
+using App_Ecommerce.Models.Identity;
+using App_Ecommerce.Services.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,6 +36,12 @@ namespace App_Ecommerce
                 options.UseSqlServer(cs);
             });
 
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<EcommerceDbContext>()
+                .AddDefaultTokenProviders(); //cookies
+
+
+            services.AddScoped<IUserService, IdentityUserService>();
             services.AddControllersWithViews();
         }
 

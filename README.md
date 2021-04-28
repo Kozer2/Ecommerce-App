@@ -41,3 +41,18 @@ As an administrator I would like to ensure that only users with update permissio
 As an administrator I would like to ensure that only users with delete permissions can delete categories or products   
 
 Due to the fact that we are working on this lab as individuals, I am only doing the first 3 user stories. There is currently no ERD. 
+
+
+
+
+## Sprint 1 milestone 3
+
+User Stories and Tasks  
+Divide your work evenly amongst your team members.  
+  
+As an administrator I would like add and save a new category so that I can expand my product lines  
+As an administrator I would like add and save a new produc so that I can expand my inventory  
+As an administrator I would like to associate a product to a category so that my users can more easily browse our inventory  
+As an administrator I would like to be able to delete products and categories as needed  
+As an administrator I would like to be able to edit/modify categories so that I can change my storefront structure in real time  
+As an administrator I would like to be able to edit/modify products so that I can change my inventoryt in real time  

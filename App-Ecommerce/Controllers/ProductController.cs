@@ -147,8 +147,5 @@ namespace App_Ecommerce.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        
-    
-        
     }
 }

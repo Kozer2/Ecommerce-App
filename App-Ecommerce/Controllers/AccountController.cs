@@ -1,5 +1,6 @@
 ﻿using App_Ecommerce.Models.Identity;
 using App_Ecommerce.Services.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -42,9 +43,14 @@ namespace App_Ecommerce.Controllers
             return View();
         }
 
-        public IActionResult Login()
+        public IActionResult Login(string returnUrl)
         {
-            return View();
+            var model = new LoginData
+            {
+                ReturnUrl = returnUrl
+            };
+
+            return View(model);
         }
 
         [HttpPost]
@@ -62,8 +68,10 @@ namespace App_Ecommerce.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [Authorize]
         public IActionResult Index()
         {
+            var user = this.User;
             return View();
         }
     }

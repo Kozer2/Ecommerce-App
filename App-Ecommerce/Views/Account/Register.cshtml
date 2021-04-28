@@ -1,0 +1,35 @@
+﻿@model App_Ecommerce.Models.Identity.RegisterData
+
+<h1>Welcome to the Registration webpage. Please Register an account here.</h1>
+
+<form method="post" asp-action="Register">
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email" class="test-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FirstName">First Name</label>
+        <input asp-for="FirstName" />
+        <span asp-validation-for="FirstName" class="test-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName">Last Name</label>
+        <input asp-for="LastName" />
+        <span asp-validation-for="LastName" class="test-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" />
+        <span asp-validation-for="UserName" class="test-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" />
+        <span asp-validation-for="Password" class="test-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register!</button>
+    <div asp-validation-summary="All"></div>
+
+</form>

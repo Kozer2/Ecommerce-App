@@ -19,6 +19,11 @@ namespace App_Ecommerce.Services.Identity
             this.signInManager = signInManager;
         }
 
+        public Task<ApplicationUser> GetCurrentUser()
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<ApplicationUser> Register(RegisterData data, ModelStateDictionary modelState)
         {
             var user = new ApplicationUser

@@ -3,6 +3,7 @@
 <h1>Welcome to the Login Page</h1>
 
 <form method="post" asp-action="Login">
+    <input type="hidden" asp-for="ReturnUrl" />
     <div class="form-group">
         <label asp-for="UserName"></label>
         <input asp-for="UserName" />

@@ -1,18 +1,43 @@
-﻿@model IEnumerable<Admin>
+﻿@model IEnumerable<Category>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome the Category Page</h1>
-    <p> Our categories are:</p>
-    <ul>
-        <li>Fish</li>
-        <li>Sand</li>
-        <li>Glass Products</li>
-        <li>Computer Monitors</li>
-        <li>Youtube Videos</li>
-    </ul>
-    
-</div>
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { Id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

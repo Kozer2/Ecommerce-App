@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>App_Ecommerce</RootNamespace>
+    <UserSecretsId>7c136d0e-5c29-4eed-ad8f-b4bfbd2175ee</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

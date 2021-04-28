@@ -48,7 +48,7 @@ namespace App_Ecommerce.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> LoginAsync(LoginData data)
+        public async Task<IActionResult> Login(LoginData data)
         {
             if (!ModelState.IsValid)
                 return View();

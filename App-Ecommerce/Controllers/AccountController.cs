@@ -41,5 +41,30 @@ namespace App_Ecommerce.Controllers
         {
             return View();
         }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> LoginAsync(LoginData data)
+        {
+            if (!ModelState.IsValid)
+                return View();
+
+            if (!await userService.SignIn(data))
+            {
+                ModelState.AddModelError(nameof(LoginData.Password), "Username or Password were incorrect.");
+                return View(data);
+            }
+                
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }

@@ -30,24 +30,22 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Admin-Dashboard</a>
                         </li>
 
-
-
-                        <li>
-                            @if (User.Identity.IsAuthenticated)
-                            {
-                                <span>Welcome back @User</span>
-
-                            }
-                            else
-                            {
-
+                        
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li>
+                                <a class="nav-link" asp-controller="Account" asp-action="Index">Account</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
                                 <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
-
-                            }
-
-
-
-                    </li>
+                            </li>
+                            <li>
+                                <a class="nav-link" asp-controller="Account" asp-action="Login">Log In</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

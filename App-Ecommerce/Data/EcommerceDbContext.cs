@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using App_Ecommerce.Models;
 
 namespace App_Ecommerce.Data
 {
@@ -14,7 +15,9 @@ namespace App_Ecommerce.Data
         {
 
         }
+        public DbSet<Product> Products { get; set; }
 
+        public DbSet<Category> Categories { get; set; }
 
     }
 }

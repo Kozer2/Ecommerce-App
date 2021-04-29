@@ -53,7 +53,7 @@ namespace App_Ecommerce.Controllers
         // POST: ProductController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ProductName,ProductDescription")] Product product)
+        public async Task<IActionResult> Create([Bind("Id,ProductName,ProductDescription,ProductImageUrl")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace App_Ecommerce.Controllers
         // POST: ProductController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ProductName,ProductDescription")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ProductName,ProductDescription,ProductImageUrl")] Product product)
         {
             if (id != product.Id)
             {

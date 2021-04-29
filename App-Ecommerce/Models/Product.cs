@@ -13,5 +13,9 @@ namespace App_Ecommerce.Models
         public string ProductName { get; set; }
         [Display(Name = "Description of Product")]
         public string ProductDescription { get; set; }
+
+        [StringLength(250)]
+        [Display(Name = "Product Image")]
+        public string ProductImageUrl { get; set; }
     }
 }

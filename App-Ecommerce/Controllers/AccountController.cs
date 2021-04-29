@@ -74,5 +74,7 @@ namespace App_Ecommerce.Controllers
             var user = this.User;
             return View();
         }
+
+       
     }
 }

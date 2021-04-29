@@ -1,5 +1,6 @@
 ﻿using App_Ecommerce.Data;
 using App_Ecommerce.Models;
+using App_Ecommerce.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,10 +14,14 @@ namespace App_Ecommerce.Controllers
     public class ProductController : Controller
     {
         private readonly EcommerceDbContext _context;
+        /*private readonly IFileService fileService;*/
 
-        public ProductController(EcommerceDbContext context)
+
+
+        public ProductController(EcommerceDbContext context) //, IFileService fileService
         {
             _context = context;
+            /*this.fileService = fileService;*/
         }
 
 
@@ -53,12 +58,16 @@ namespace App_Ecommerce.Controllers
         // POST: ProductController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ProductName,ProductDescription")] Product product)
+        public async Task<IActionResult> Create([Bind("Id,ProductName,ProductDescription,ProductImageUrl")] Product product) //, IFormFile productImage
         {
             if (ModelState.IsValid)
             {
+               /* string url = await fileService.Create(productImage);*/
+                /*product.ProductImageUrl */
                 _context.Add(product);
                 await _context.SaveChangesAsync();
+                
+             
                 return RedirectToAction(nameof(Index));
             }
             return View(product);
@@ -83,7 +92,7 @@ namespace App_Ecommerce.Controllers
         // POST: ProductController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ProductName,ProductDescription")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ProductName,ProductDescription,ProductImageUrl")] Product product)
         {
             if (id != product.Id)
             {
@@ -147,5 +156,6 @@ namespace App_Ecommerce.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+       
     }
 }

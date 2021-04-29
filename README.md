@@ -56,3 +56,15 @@ As an administrator I would like to associate a product to a category so that my
 As an administrator I would like to be able to delete products and categories as needed  
 As an administrator I would like to be able to edit/modify categories so that I can change my storefront structure in real time  
 As an administrator I would like to be able to edit/modify products so that I can change my inventoryt in real time  
+
+## Sprint 1 Milestone 4
+
+Admin Dashboard
+When adding/editing products, we’ll be adding the ability to upload an image for each product. We’ll be storing these the cloud. Specifically, we’ll be using Azure Blob Storage Containers which allow us to upload an image to remote storage and obtain a URL so we can eventually view them on a web page.
+
+User Stories and Tasks
+Divide your work evenly amongst your team members.
+
+As an administrator I would like upload a picture for each product so that my shoppers will know what our products look like
+As an administrator I would like replace a picture for each product so that I can keep my inventory up to date
+As an administrator, I would like a preview of my product listings so that I can see what my customers will see in the online store

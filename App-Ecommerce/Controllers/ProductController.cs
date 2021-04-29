@@ -53,7 +53,7 @@ namespace App_Ecommerce.Controllers
         // POST: ProductController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ProductName,ProductDescription,ProductImageUrl")] Product product)
+        public async Task<IActionResult> Create([Bind("Id,ProductName,ProductDescription,ProductImageUrl")] Product product, IFormFile productImage)
         {
             if (ModelState.IsValid)
             {
@@ -147,5 +147,6 @@ namespace App_Ecommerce.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+       
     }
 }

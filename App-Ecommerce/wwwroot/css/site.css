@@ -82,3 +82,9 @@ body {
     max-width: 100px;
     max-height: 100px;
 }*/
+
+.form-group-btn{
+    padding: 5px;
+    margin: 15px;
+    text-align: center;
+}

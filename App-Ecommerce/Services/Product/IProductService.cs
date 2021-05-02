@@ -7,6 +7,6 @@ namespace App_Ecommerce.Services.Product
 {
     public interface IProductService
     {
-       
+        Task SetCurrentProductImageUrl(string url);
     }
 }

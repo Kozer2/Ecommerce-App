@@ -14,14 +14,16 @@ namespace App_Ecommerce.Controllers
     public class ProductController : Controller
     {
         private readonly EcommerceDbContext _context;
-        /*private readonly IFileService fileService;*/
+
+
+        private readonly IFileService fileService;
 
 
 
-        public ProductController(EcommerceDbContext context) //, IFileService fileService
+        public ProductController(EcommerceDbContext context, IFileService fileService) //, IFileService fileService
         {
             _context = context;
-            /*this.fileService = fileService;*/
+            this.fileService = fileService;
         }
 
 
@@ -58,12 +60,12 @@ namespace App_Ecommerce.Controllers
         // POST: ProductController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ProductName,ProductDescription,ProductImageUrl")] Product product) //, IFormFile productImage
+        public async Task<IActionResult> Create([Bind("Id,ProductName,ProductDescription,ProductImageUrl")] Product product, IFormFile productImage) 
         {
             if (ModelState.IsValid)
             {
-               /* string url = await fileService.Create(productImage);*/
-                /*product.ProductImageUrl */
+                string url = await fileService.Create(productImage);
+                
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 

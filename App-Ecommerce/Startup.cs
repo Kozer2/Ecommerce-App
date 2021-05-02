@@ -1,5 +1,6 @@
 using App_Ecommerce.Data;
 using App_Ecommerce.Models.Identity;
+using App_Ecommerce.Services;
 using App_Ecommerce.Services.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -40,6 +41,8 @@ namespace App_Ecommerce
                 .AddEntityFrameworkStores<EcommerceDbContext>()
                 .AddDefaultTokenProviders(); //cookies
 
+            
+            services.AddSingleton<IFileService, AzureFileService>();
 
             services.AddScoped<IUserService, IdentityUserService>();
             services.AddControllersWithViews();

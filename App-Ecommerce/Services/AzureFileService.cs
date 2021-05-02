@@ -7,11 +7,11 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Blob;
 
-/*namespace WebApplication1.Services
+namespace App_Ecommerce.Services
 {
     public class AzureFileService : IFileService
     {
-        public const string AccountName_Key = "AzureStorageAccountName";
+        public const string AccountName_Key = "EcommerceAzureStorageAccountName";
         private readonly CloudBlobClient cloudBlobClient;
 
         public AzureFileService(IConfiguration configuration)
@@ -28,7 +28,7 @@ using Microsoft.WindowsAzure.Storage.Blob;
         public async Task<string> Create(IFormFile productImage)
         {
             // Access to a storage Container
-            var container = cloudBlobClient.GetContainerReference("profiles");
+            var container = cloudBlobClient.GetContainerReference("products");
             await container.CreateIfNotExistsAsync();
             await container.SetPermissionsAsync(new BlobContainerPermissions
             {
@@ -45,4 +45,4 @@ using Microsoft.WindowsAzure.Storage.Blob;
             return blobFile.Uri.ToString();
         }
     }
-}*/
+}

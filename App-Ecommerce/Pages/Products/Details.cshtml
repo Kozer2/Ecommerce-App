@@ -27,7 +27,8 @@
             @Html.DisplayNameFor(model => model.Product.ProductImageUrl)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Product.ProductImageUrl)
+            
+            <img src ="@Model.Product.ProductImageUrl" height="200" width="200"/>
         </dd>
     </dl>
 </div>

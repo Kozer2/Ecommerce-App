@@ -67,6 +67,7 @@ namespace App_Ecommerce.Controllers
             if (ModelState.IsValid)
             {
                 string url = await fileService.Create(productImage);
+                product.ProductImageUrl = url;
                 
                 _context.Add(product);
                 await _context.SaveChangesAsync();

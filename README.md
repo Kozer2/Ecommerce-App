@@ -71,7 +71,16 @@ As an administrator, I would like a preview of my product listings so that I can
 
 
 
-# Final Product
+# Final Product Sprint 1
 
-The final product is published to Azure *CURRENTLY NOT WORKING*. Images can be uploaded and show up in Azure container. 
-It is possible to create accounts, login, create categories, and products. Images do not show up on products just yet.
+The final product for Sprint 1 is published on [Azure](https://ecommerce-lab.azurewebsites.net/). You can upload images, create, delete, and edit products. Sign up and Login to accounts. 
+
+
+
+# Sprint 2 Milestone 1 
+As a user, I would like to see products available for sale so that I can browse through the inventory for purchase.  
+As a user, I would like to register for an account on the site, so that I can make purchases  
+As a user, I would like to securely login to my account so that I can add products to my shopping cart  
+
+## Completed
+I finshed the Razer page to view products without needing to log in. 

@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "storage1": {
+      "type": "storage",
+      "connectionId": "AzureStoriage"
+    },
     "mssql1": {
       "type": "mssql",
       "connectionId": "DefaultConnection"

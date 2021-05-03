@@ -1,6 +1,7 @@
 ﻿using App_Ecommerce.Data;
 using App_Ecommerce.Models;
 using App_Ecommerce.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -58,6 +59,7 @@ namespace App_Ecommerce.Controllers
         }
 
         // POST: ProductController/Create
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,ProductName,ProductDescription,ProductImageUrl")] Product product, IFormFile productImage) 
@@ -76,6 +78,7 @@ namespace App_Ecommerce.Controllers
         }
 
         // GET: ProductController/Edit/5
+        
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -92,6 +95,7 @@ namespace App_Ecommerce.Controllers
         }
 
         // POST: ProductController/Edit/5
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,ProductName,ProductDescription,ProductImageUrl")] Product product)
@@ -148,6 +152,7 @@ namespace App_Ecommerce.Controllers
         }
 
         // POST: ProductController/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

@@ -40,6 +40,7 @@ namespace App_Ecommerce.Services.Identity
 
             if (result.Succeeded)
             {
+                /*userManager.AddToRoleAsync(user, customer)*/
                 return user;
             }
 

@@ -37,13 +37,23 @@ namespace App_Ecommerce.Services.Identity
             };
 
             var result = await userManager.CreateAsync(user, data.Password);
-
+             
             if (result.Succeeded)
             {
-                await userManager.AddToRoleAsync(user, role);
+                if(role == Role.Administrator)
+                {
+                    var admins = await userManager.GetUsersInRoleAsync(Role.Administrator);
+                    if(admins.Count == 0)
+                        await userManager.AddToRoleAsync(user, role);
+                }
+                else
+                {
+                    await userManager.AddToRoleAsync(user, role);
+                }
+               await signInManager.SignInAsync(user, false);
                 return user;
             }
-
+            
             foreach (var error in result.Errors)
             {
                 var errorKey =

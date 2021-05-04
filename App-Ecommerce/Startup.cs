@@ -18,6 +18,7 @@ using Microsoft.Extensions.Azure;
 using Azure.Storage.Queues;
 using Azure.Storage.Blobs;
 using Azure.Core.Extensions;
+using Microsoft.OpenApi.Models;
 
 namespace App_Ecommerce
 {
@@ -40,6 +41,23 @@ namespace App_Ecommerce
                 if (cs == null) throw new InvalidOperationException("Default Connection is missing");
                 options.UseSqlServer(cs);
             });
+
+
+            /*services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Ecommerce API", Version = "v1" });
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                });
+                c.OperationFilter<AuthenticationRequirementOperationFilter>();
+            });*/
+
+
+
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<EcommerceDbContext>()
@@ -76,6 +94,23 @@ namespace App_Ecommerce
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+
+           /* app.UseSwagger(options =>
+            {
+                options.RouteTemplate = "/api/{documentName}/swagger.json";
+            });
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/api/v1/swagger.json", "My API V1");
+                c.RoutePrefix = "api-docs";
+            });*/
+
+
+
 
             app.UseRouting();
             app.UseAuthentication();

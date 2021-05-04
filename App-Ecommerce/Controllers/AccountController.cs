@@ -29,7 +29,7 @@ namespace App_Ecommerce.Controllers
             if (!ModelState.IsValid)
                 return View(data);
 
-            await userService.Register(data, ModelState);
+            await userService.Register(data, Role.Administrator, ModelState);
             // checks for errors on registration
             if (!ModelState.IsValid)
                 return View(data);

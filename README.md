@@ -84,3 +84,13 @@ As a user, I would like to securely login to my account so that I can add produc
 
 ## Completed
 I finshed the Razer page to view products without needing to log in. 
+
+
+
+# Sprint 2 Milestone 2
+As a user, I would like a way to store the items I wish to purchase in a cart within the application.    
+As a user, I would like the ability to view my desired purchases while browsing the other products on the site.  
+As a user I would like a dedicated page where I can view all the products I wish to purpose all in one location.  
+
+## Completed
+I did not finish this lab during the sprint. I finished creating my roles for an admin and a customer. 

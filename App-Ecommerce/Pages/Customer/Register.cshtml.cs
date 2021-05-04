@@ -29,7 +29,7 @@ namespace App_Ecommerce.Pages.Customer
             if (!ModelState.IsValid)
                 return Page();
 
-            await userService.Register(Input, ModelState);
+            await userService.Register(Input, Role.Customer, ModelState);
             if (!ModelState.IsValid)
                 return Page();
 

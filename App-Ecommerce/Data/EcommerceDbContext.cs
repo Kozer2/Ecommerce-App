@@ -27,7 +27,7 @@ namespace App_Ecommerce.Data
                     );
         }
 
-        private IdentityRole BuildRole(string roleName)
+        private static IdentityRole BuildRole(string roleName)
         {
             return new IdentityRole
             {

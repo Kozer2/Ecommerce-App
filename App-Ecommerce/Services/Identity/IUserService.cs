@@ -6,7 +6,7 @@ namespace App_Ecommerce.Services.Identity
 {
     public interface IUserService
     {
-        Task<ApplicationUser> Register(RegisterData data, ModelStateDictionary modelState);
+        Task<ApplicationUser> Register(RegisterData data, string role, ModelStateDictionary modelState);
 
         Task<bool> SignIn(LoginData data);
 

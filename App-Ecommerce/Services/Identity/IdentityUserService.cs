@@ -24,7 +24,7 @@ namespace App_Ecommerce.Services.Identity
             throw new NotImplementedException();
         }
 
-        public async Task<ApplicationUser> Register(RegisterData data, ModelStateDictionary modelState)
+        public async Task<ApplicationUser> Register(RegisterData data, string role, ModelStateDictionary modelState)
         {
             var user = new ApplicationUser
             {
@@ -40,7 +40,7 @@ namespace App_Ecommerce.Services.Identity
 
             if (result.Succeeded)
             {
-                /*userManager.AddToRoleAsync(user, customer)*/
+                await userManager.AddToRoleAsync(user, role);
                 return user;
             }
 

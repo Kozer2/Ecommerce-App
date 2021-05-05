@@ -34,7 +34,7 @@ namespace App_Ecommerce.Data
                 Id = roleName.ToLower(),
                 Name = roleName,
                 NormalizedName = roleName.ToUpper(),
-                ConcurrencyStamp = Guid.NewGuid().ToString(),
+                ConcurrencyStamp = Guid.Empty.ToString(),
         };
         }
 

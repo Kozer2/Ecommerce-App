@@ -46,12 +46,13 @@
                                 <a class="nav-link" asp-controller="Account" asp-action="Index">Account</a>
                             </li>
 
-
+                            
                         }
                         else
                         {
                             <li>
-                                <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
+                                @*<a href="@Url.Page("~/Customer/Register")">Register</a>*@
+                                <a class="nav-link" asp-page="/Customer/Register">Register</a>
                             </li>
                             <li>
                                 <a class="nav-link" asp-controller="Account" asp-action="Login">Log In</a>

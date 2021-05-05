@@ -94,3 +94,29 @@ As a user I would like a dedicated page where I can view all the products I wish
 
 ## Completed
 I did not finish this lab during the sprint. I finished creating my roles for an admin and a customer. 
+
+
+
+# Sprint 2 Milestone 3
+Consumer Site (The Storefront)  
+The cart is full and our customer is ready to make a purchase. Focusing on that workflow, we’d like to give them ability to enter their payment information and begin the order finalization process.  
+
+For this milestone, our goal is simply to create the final 2 pages in the workflow (order and receipt) and execute the communications process … not to accept payment and process the order.  
+
+User Stories and Tasks  
+Divide your work evenly amongst your team members.  
+
+As a user, I would like to see a summary of my purchase after completing my checkout process.  
+As a user, I would like a summary of my purchase to be emailed to me so that I can store the receipt for my records.  
+As a user, I would like to be thanked for my purchase following completion of order processing  
+As an administrator, I would like a copy of all purchases emailed to our sales department so that they can update our accounting system  
+As an administrator, I would like a copy of all purchases emailed to our warehouse so that they can begin the fulfillment process  
+Guidance / Questions  
+Guidance  
+Does each person in the emails require the same information?  
+When creating emails, consider using the SendGrid design templates. Not required, but encouraged.  
+Also consider using StringBuilder when creating the text for the email, this is much more efficient than concatenating a string together.  
+Question: At what point in the process do emails get sent?  
+
+## Completed
+For this lab I tried to catch up and complete the shopping cart. I added the a"ad to cart" button, but have no functionality beyond that. I also added a working log-out button

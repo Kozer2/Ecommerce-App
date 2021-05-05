@@ -21,12 +21,11 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-page="/Products/Index">Products</a>
-                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+
 
                         @if (User.IsInRole("Administrator"))
                         {
@@ -35,6 +34,9 @@
                             </li>
                             <li>
                                 <a class="nav-link" asp-controller="Account" asp-action="Index">Account</a>
+                            </li>
+                            <li>
+                                <partial name="_Logout" />
                             </li>
                         }
 
@@ -45,16 +47,26 @@
                             <li>
                                 <a class="nav-link" asp-controller="Account" asp-action="Index">Account</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-page="/Products/Index">Products</a>
+                            </li>
+                            <li>
+                                <partial name="_Logout" />
+                            </li>
 
 
                         }
                         else
                         {
                             <li>
-                                <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
+                                @*<a href="@Url.Page("~/Customer/Register")">Register</a>*@
+                                <a class="nav-link" asp-page="/Customer/Register">Register</a>
                             </li>
                             <li>
                                 <a class="nav-link" asp-controller="Account" asp-action="Login">Log In</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-page="/Products/Index">Products</a>
                             </li>
                         }
                     </ul>

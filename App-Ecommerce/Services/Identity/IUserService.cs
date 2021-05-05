@@ -9,6 +9,7 @@ namespace App_Ecommerce.Services.Identity
         Task<ApplicationUser> Register(RegisterData data, string role, ModelStateDictionary modelState);
 
         Task<bool> SignIn(LoginData data);
+        Task SignOut();
 
         Task<ApplicationUser> GetCurrentUser();
     }

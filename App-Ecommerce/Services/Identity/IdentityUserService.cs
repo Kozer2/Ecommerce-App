@@ -73,5 +73,10 @@ namespace App_Ecommerce.Services.Identity
            var result = await signInManager.PasswordSignInAsync(data.UserName, data.Password, false, false);
             return result.Succeeded;
         }
+
+        public async Task SignOut()
+        {
+            await signInManager.SignOutAsync();
+        }
     }
 }

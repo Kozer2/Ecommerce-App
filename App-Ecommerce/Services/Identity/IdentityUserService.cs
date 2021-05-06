@@ -12,11 +12,15 @@ namespace App_Ecommerce.Services.Identity
     {
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly UserManager<ApplicationUser> userManager;
+        private readonly IEmailService emailService;
 
-        public IdentityUserService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+
+
+        public IdentityUserService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IEmailService emailService)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
+            this.emailService = emailService;
         }
 
         public Task<ApplicationUser> GetCurrentUser()
@@ -50,7 +54,10 @@ namespace App_Ecommerce.Services.Identity
                 {
                     await userManager.AddToRoleAsync(user, role);
                 }
-               await signInManager.SignInAsync(user, false);
+                await signInManager.SignInAsync(user, false);
+
+                // user email service setup
+                await emailService.SendEmail(user.Email, "Thank you for signing up", "We appreciate your business");
                 return user;
             }
             

@@ -67,7 +67,7 @@ namespace App_Ecommerce
             services.AddSingleton<IFileService, AzureFileService>();
 
             services.AddScoped<IUserService, IdentityUserService>();
-            services.AddSingleton<IEmailService, LoggerEmailService>();
+            services.AddSingleton<IEmailService, SendGridEmailService>();
 
             services.AddRazorPages();
             services.AddControllersWithViews();

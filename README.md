@@ -1,4 +1,12 @@
 # Ecommerce-App
+Welcome to the Ecommerce App. Upon Registration a person will receive an email and be able to browse the products and buy certain ones by adding to cart. 
+
+
+
+
+
+
+
 ## Sprint 1 milestone 1
 
 Admin Dashboard  
@@ -120,3 +128,23 @@ Question: At what point in the process do emails get sent?
 
 ## Completed
 For this lab I tried to catch up and complete the shopping cart. I added the a"ad to cart" button, but have no functionality beyond that. I also added a working log-out button
+
+
+
+# Sprint 2 Milestone 4
+User Stories and Tasks  
+Divide your work evenly amongst your team members.  
+
+As a user, I would like to see a summary of my purchase after completing my checkout process with a successful transaction  
+As a user, following a successful transaction, I would like a summary of my purchase to be emailed to me so that I can store the receipt   for my records.  
+As a user, I would like to be thanked for my purchase following completion of order processing  
+As a user, I would like to be notified if my payment failed so that I can try again.  
+As an administrator, I would like to see a listing of all paid/processed orders  
+Guidance / Questions  
+Follow a tactical approach to wiring in the payment processing  
+Do we want to save this information anywhere in the database?  
+should we keep track of all the transactions?  
+what information should we save (or not save)?  
+
+## Completed
+Today I completed my Sending email service for users on registration. I have not yet gotten the shopping cart figured out
